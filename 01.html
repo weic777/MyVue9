@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+</head>
+<body>
+  <!-- 渲染資料區 -->
+  <div id="app">
+    <!-- 使用兩組大括號，可以顯示變數內容 -->
+    {{ message }}
+  </div>
+
+  <!-- VUE's CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "Hello"
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>
