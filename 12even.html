@@ -8,6 +8,9 @@
 <body>
   <!-- 渲染資料區 -->
   <div id="app">
+<p>點擊次數:{{count}}</p>
+<!--用vue觸發on事件click -->
+<button v-on:click="count++">Click</button>
 
   </div>
 
@@ -15,10 +18,13 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <script>
+    function fun1(n){
+        console.log(n)
+    }
     const app = Vue.createApp({
       data() {
         return {
-          
+          count:0
         }
       }
     })

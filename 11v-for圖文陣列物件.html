@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- 渲染資料區 -->
+    <div id="app">
+        <div>
+            <figure v-for="a in arr1">
+                <img :src="a.imgUrl" alt="">
+                <figcaption>{{a.imgName}}</figcaption>
+            </figure>
+        </div>
+    </div>
+
+
+    <!-- VUE's CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    arr1: [
+                        {
+                            imgName: 'HTML5',
+                            imgUrl: './images/html5.svg',
+                        },
+                        {
+                            imgName: 'CSS3',
+                            imgUrl: './images/css3.svg',
+                        },
+                        {
+                            imgName: 'JavaScript',
+                            imgUrl: './images/js.svg',
+                        },
+                    ]
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+
+
+
+
+</body>
+
+
+</html>
+

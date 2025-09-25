@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <!-- 建立規則 -->
+  <style>
+    .pinkBG{
+        background-color: pink;
+    }
+        .greenBG{
+        background-color: greenyellow;
+    }
+    .myClass{
+        background-color: skyblue;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 渲染資料區 -->
+  <div id="app">
+<div class="pinkBG">CSS一般的類別規則</div>
+<!-- v-bind(vue綁定):class(名稱)="vueClass"(呼叫下面建立好的變數) -->
+<div v-bind:class="vueClass">CSS類別綁定1</div>
+<div v-bind:class="{myClass:true}">CSS類別綁定2</div>
+
+  </div>
+
+  <!-- VUE's CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          vueClass:"greenBG"
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>

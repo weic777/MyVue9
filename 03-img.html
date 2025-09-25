@@ -4,11 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Document</title>
+  <style>
+    img{
+        width: 200px;
+    }
+    
+  </style>
 </head>
 <body>
   <!-- 渲染資料區 -->
   <div id="app">
+    <p>圖片綁定</p>
+    <!-- 一般圖片 -->
+    <img src="./images/p10.jpg" alt="">
 
+    <!-- vue綁定 -->
+    <img v-bind:src="url" alt="">
   </div>
 
   <!-- VUE's CDN -->
@@ -18,7 +29,8 @@
     const app = Vue.createApp({
       data() {
         return {
-          
+            // 圖片來源
+            url:"./images/p1.jpg"
         }
       }
     })

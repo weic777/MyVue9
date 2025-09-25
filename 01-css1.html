@@ -4,11 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Document</title>
+  <style>
+    #app{
+      background-color: blueviolet;
+      color: aliceblue;
+      font-size: 30px;
+      width: 300px;
+    }
+  </style>
+
 </head>
 <body>
   <!-- 渲染資料區 -->
   <div id="app">
-
+    <!-- 使用兩組大括號，可以顯示變數內容 -->
+    {{ message }}
   </div>
 
   <!-- VUE's CDN -->
@@ -18,9 +28,9 @@
     const app = Vue.createApp({
       data() {
         return {
-          
-        }
+            message: "Hello"
       }
+    }
     })
     app.mount('#app')
   </script>

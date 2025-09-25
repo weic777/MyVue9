@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button,
+        p {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- 渲染資料區 -->
+    <div id="app">
+        <button v-on:click="changeText">{{txt}}</button>
+        <p v-on:click="changeText2">{{txt2}}</p>
+    </div>
+
+
+    <!-- VUE's CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    txt: '123',
+                    txt2: 'pppp'
+                }
+            },
+            methods: {
+                changeText() {
+                    this.txt = "我是按鈕"
+                },
+                changeText2() {
+                    this.txt2 = "我是段落"
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+
+
+
+
+</body>
+
+
+</html>
+

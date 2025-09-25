@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        img{
+width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 渲染資料區 -->
+    <div id="app">
+        <!-- 不使用迴圈寫法 -->
+        <ul>
+            <li>{{arr1[0]}}</li>
+            <li>{{arr1[1]}}</li>
+            <li>{{arr1[2]}}</li>
+        </ul>
+        <hr>
+        <!-- 使用for迴圈寫法 -->
+<ol>
+    <!-- 從arr1取出資料丟給a -->
+    <li v-for="a in arr1">{{a}}</li>
+</ol>
+<hr>
+<!-- 使用for迴圈帶區圖片 -->
+<div>
+    <img v-for="y in arr2" v-bind:src="y">
+    <br>
+        <img v-for="y in arr2" :src="y">
+
+</div>
+    </div>
+
+    <!-- VUE's CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    arr1: ['HTML5', 'CSS', 'JS'],
+                    arr2: ['./images/html5.svg', './images/css3.svg','./images/js.svg']
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

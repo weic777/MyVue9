@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+</head>
+<body>
+  <!-- 渲染資料區 -->
+  <div id="app">
+<div style="font-size: 32px;">我是文字</div>
+<!-- 第二個單字字首要大寫 -->
+ <!-- v-bind簡化可以不寫 -->
+<div :style="{fontSize:size}">vue的行內樣式綁定</div>
+<!-- 成立就是?後面內容 不成立就是:後面內容 -->
+ <!-- 兩個css寫在一起就用逗號隔開 -->
+<div v-bind:style="{color:isColor?'#fff':'red', 
+backgroundColor:isColor?'green':'yellow',
+fontSize:size
+}">背景色綁定布林值變化</div>
+  </div>
+
+  <!-- VUE's CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          size:"50px",
+          isColor:false
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>

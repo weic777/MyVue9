@@ -8,8 +8,11 @@
 <body>
   <!-- 渲染資料區 -->
   <div id="app">
-    <!-- 使用兩組大括號，可以顯示變數內容 -->
-    {{ message }}
+    <!-- 使用v-show來綁定布林值，可以顯示或隱藏 -->
+<div v-show="showDiv">v-show顯示或隱藏</div>
+<!-- 使用v-if -->
+ <div v-if="showDiv">v-if顯示或隱藏</div>
+
   </div>
 
   <!-- VUE's CDN -->
@@ -19,7 +22,7 @@
     const app = Vue.createApp({
       data() {
         return {
-          message: "Hello"
+            showDiv:true
         }
       }
     })

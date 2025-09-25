@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #app i {
+            font-size: 50px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 渲染資料區 -->
+  <div id="app">
+        <!-- 判斷整個文字是否存在 -->
+        <div v-if="txt.includes(search)">
+            <div v-if="search === 'HTML'">
+                <p>{{search}} 找到了</p>
+                <i class="fa-brands fa-html5"></i>
+            </div>
+
+            <div v-if="search === 'CSS'">
+                <p>{{search}} 找到了</p>
+                <i class="fa-brands fa-css3-alt"></i>
+            </div>
+
+            <div v-if="search === 'Js'">
+                <p>{{search}} 找到了</p>
+                <i class="fa-brands fa-square-js"></i>
+            </div>
+
+            <div v-if="search === 'React'">
+                <p>{{search}} 找到了</p>
+                <i class="fa-brands fa-react"></i>
+            </div>
+
+            <div v-if="search === 'Figma'">
+                <p>{{search}} 找到了</p>
+                <i class="fa-brands fa-figma"></i>
+            </div>
+
+            <div v-if="search === 'Vue'">
+                <p>{{search}} 找到了</p>
+                <i class="fa-brands fa-vuejs"></i>
+            </div>
+        </div>
+
+        <!-- 文字不存在 -->
+        <p v-else>{{search}} 文字不存在</p>
+    </div>
+
+
+    <!-- VUE's CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    // 被搜尋的字串
+                    txt: 'HTML,CSS,Js,React,Figma,Vue',
+                    // 欲搜尋文字
+                    search: 'HTML'
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
